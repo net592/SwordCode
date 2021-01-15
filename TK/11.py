@@ -9,4 +9,7 @@ def primeCnt(n):
         p += 1
     primes = [element for element in range(2, n) if primes[element]]
     return primes
-print(primeCnt(100))
+
+
+if __name__ == '__main__':
+    print(primeCnt(100))
