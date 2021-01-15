@@ -1,1 +1,0 @@
-windows系统Gvim请自行安装Vundle插件后，再安装其余插件。
