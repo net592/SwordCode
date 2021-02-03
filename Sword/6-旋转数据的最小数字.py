@@ -46,6 +46,37 @@ class Solution:
         return minimun
 
 
+# -*- coding:utf-8 -*-
+class Solution:
+    def minNumberInRotateArray(self, rotateArray):
+        """
+        思路：
+        非递减数组进行旋转，采用变形的二分法，通过判断训练处于递增或是递减序列，看寻找最小值。分为三种情况：
+        当low<high时，直接返回index为low的数组值
+        1.处于递增：low上移；
+        2.处于递减：high下移；
+        3.不增不减，low++进行范围缩小
+        :param rotateArray:
+        :return:
+        """
+        # write code here
+        if len(rotateArray)==0:
+            return 0
+        low=0
+        high=len(rotateArray)-1
+        mid=0
+        while low<high:
+            mid=low+(high-low)/2
+            if rotateArray[low]<rotateArray[high]:
+                return rotateArray[low]
+            elif rotateArray[mid]>rotateArray[low]:
+                low+=1
+            elif rotateArray[high]>rotateArray[mid]:
+                high=mid
+            else:
+                low+=1
+        return rotateArray[low]
+
 if __name__ == '__main__':
     input = [1, 1, 1,0, 1]
     s = Solution()
