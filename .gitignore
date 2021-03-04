@@ -1,0 +1,48 @@
+*.[oa]
+*~
+*.pyc
+*.swp
+*.swo
+*.bin
+*.lock
+
+.buildpath
+logs/*
+
+# pycharm
+.idea
+
+# OS X
+.DS_Store
+
+# nodejs
+node_modules
+nvm/
+dist/
+
+# python virtualenv pyenv
+*/__pycache__/
+venv/
+venv
+pyenv/
+
+# pyenv
+.python-version
+
+# pipenv
+.venv/
+
+# pipenv 暂时
+Pipfile
+Pipfile.lock
+
+# sqlite3
+*.sqlite3
+
+.tern-port
+
+# python local setting
+settings_local.py
+
+# 本地js配置
+local.config.js
