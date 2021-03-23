@@ -29,9 +29,9 @@ class Solution:
             print("s", s)
         n = len(nums)-1
         k = k%len(nums)  # 给出的k可能会大于数组长度，这时候就要对原数组取模
-        reverse(0, n, nums)  # 反正所有
-        reverse(0, k-1, nums)  # 反转k一组
-        reverse(k, n, nums)  # 反正剩余一组
+        reverse(0, n, nums)  # 反正所有 [7, 6, 5, 4, 3, 2, 1]
+        reverse(0, k-1, nums)  # 反转k前一组 3 [5, 6, 7, 4, 3, 2, 1]
+        reverse(k, n, nums)  # 反正k后剩余一组4  [5, 6, 7, 1, 2, 3, 4]
         return nums
 if __name__ == '__main__':
     s= Solution()

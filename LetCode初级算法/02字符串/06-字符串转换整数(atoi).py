@@ -33,3 +33,40 @@ import re
 class Solution:
     def myAtoi(self, str: str) -> int:
         return max(min(int(*re.findall('^[\+\-]?\d+', str.lstrip())), 2**31 - 1), -2**31)
+    
+class Solution:
+    def myAtoi(self, str):
+        """
+        :type str: str
+        :rtype: int
+        """
+        s = str.strip()#去掉头尾的空白字符
+        sign = 1
+        #空字符串,不能转换,直接返回0
+        if not s:
+            return 0
+        '''
+        考虑几种情况：
+        1.第1个非空字符是正号或负号
+        2.第1个非空字符是数字
+        (数字中间夹了其余非数字字符的话就不考虑后面的内容了)
+        3.第1个非空字符不是正负号或数字,直接返回0
+        '''
+        if s[0] in ['+','-']:
+            if s[0]=='-':
+                sign = -1
+            s = s[1:]
+        res = 0
+        for c in s:
+            if c.isdigit():
+                res = res*10+int(c)
+            else:
+                #代表数字中间夹了其余非数字字符的话就不考虑后面的内容了
+                break
+        res *= sign
+        #判断溢出
+        if res>2147483647:
+            return 2147483647
+        if res<-2147483648:
+            return -2147483648
+        return res

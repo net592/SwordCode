@@ -69,11 +69,11 @@ class Solution:
         """
         left = 0
         right = len(nums) -1
-        mid = int(right//2)
         for i in range(len(nums)):
-            print(i)
-            if nums[i] + nums[right]
-
+            for j in range(i+1, right):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+        return []
 if __name__ == '__main__':
     s = Solution()
     nums = [2,7,11,15]

@@ -20,7 +20,11 @@ Return slow+1
 """
 
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
+    def removeDuplicates(self, nums: int) -> int:
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         """
         思路：
         定义一个慢指針，保存前一个位置，
@@ -36,12 +40,15 @@ class Solution:
         slow = 0
         for i in range(1, len(nums)):
             if nums[i] != nums[slow]: #其中nums[slow]表示上1个数字
-                slow += 1
-                nums[slow] = nums[i]
+                slow += 1 # 计数器+1
+                print(nums,slow, nums[slow], nums[i])
+                nums[slow] = nums[i] # 
+            else:
+                print("dup", nums[i], slow)
         slow += 1
         return slow
 
 if __name__ == '__main__':
-    nums = [5,5,3,10,1]
+    nums = [5,5,3,10,1]  # [5,3,10,1] 4
     s = Solution()
     print(s.removeDuplicates(nums))
