@@ -21,9 +21,10 @@ class Solution:
             return ""
         res = s[0]
         i = 1
-        while i < len(s):
-            while s[i].find(res) != 0:
-                res = res[0:len(res)-1]
+        while i < len(s): #遍历每个 列表字符串
+            print("i", i, s[i], res)
+            while s[i].find(res) != 0: # 判断发现的res, s[i] == res 跳出
+                res = res[0:len(res)-1] # 递减继续查找
                 print(s, i, s[i], res)
             i += 1
         return res
