@@ -1,6 +1,6 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
-        if(n == 1): return '1'
+        if(n == 1): return '1' # 特殊情况处理
         num = self.countAndSay(n-1)+"*"
         temp = list(num)
         count = 1
@@ -33,6 +33,7 @@ class Solution:
             end = 0
             # 开始遍历前一项，开始描述
             while end < len(pre):
+                print(start, end, len(pre), cur, pre)
                 # 统计重复元素的次数，出现不同元素时，停止
                 # 记录出现的次数，
                 while end < len(pre) and pre[start] == pre[end]:
@@ -48,4 +49,4 @@ class Solution:
 
 if __name__ == "__main__":
     s=Solution()
-    print(s.countAndSay(2))
+    print(s.countAndSay(3))
