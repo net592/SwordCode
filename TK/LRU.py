@@ -46,9 +46,38 @@ class LRUCache(collections.OrderedDict):
         else:
             self.cache[key] = value
 
-
+#基于普通dict和list实现
+class LRUCache():
+     def __init__( self , size=5 ):
+         self.size = size
+         self.cache = dict()
+         self.key = []
+ 
+     def get( self , key):
+         if key in self.cache:
+             self.key.remove(key)
+             self.key.insert( 0 ,key)
+             return self.cache[key]
+         else :
+             return None
+ 
+     def set ( self , key, value):
+         if key in self.cache:
+             self.cache.pop(key)
+             self.cache[key] = value
+             self.key.remove(key)
+             self.key.insert( 0 ,key)
+         elif len ( self.cache) == self.size:
+             old_key = self.key.pop()
+             self.cache.pop(old_key)
+             self.key.insert( 0 ,key)
+             self.cache[key] = value
+         else :
+             self.cache[key] = value
+             self.key.insert( 0 ,key)
+             
 if __name__ == '__main__':
-    test = LRUCache()
+    test = LRUCache(size=6)
     test.set('a',1)
     test.set('b',2)
     test.set('c',3)

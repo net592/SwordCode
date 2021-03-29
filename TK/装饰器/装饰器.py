@@ -37,5 +37,5 @@ def test2():
 
 if __name__ == "__main__":
     test1()
-    test2()
+    test2(1,2,3)
 

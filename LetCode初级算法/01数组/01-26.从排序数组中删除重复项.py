@@ -45,6 +45,7 @@ class Solution:
                 nums[slow] = nums[i] # 
             else:
                 print("dup", nums[i], slow)
+        # 增加长度
         slow += 1
         return slow
 

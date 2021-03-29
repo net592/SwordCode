@@ -12,3 +12,10 @@ class Solution:
             if nums[i] == nums[i+1]:
                 return True
         return False
+    
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        # 比较重复数是否小于 总长度
+        if len(set(nums)) < len(nums):
+            return True
+        else:
+            return False

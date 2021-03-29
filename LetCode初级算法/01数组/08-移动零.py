@@ -4,6 +4,7 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         :return [1,3,12,0,0]
         """
+        # 分步法。前移补整，后位补0
         slow = 0
         # 把所有i不等于0的数，向前移动
         for i in range(len(nums)):
@@ -21,6 +22,7 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         :return [1,3,12,0,0]
         """
+        # 双指针解法
         j = 0
         # 两个指针i和j
         for i in range(len(nums)):

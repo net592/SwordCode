@@ -4,25 +4,25 @@ class Solution:
         rows = [{} for i in range(9)]
         cols = [{} for i in range(9)]
         boxs = [{} for i in range(9)]
-
+        
+        # 二维环境
         for i in range(9):
             for j in range(9):
                 num = board[i][j]
                 if num == ".":
                     continue
                 else:
-                    #行位置统计
+                    #行位置计数
                     rows[i][num] = rows[i].get(num, 0) + 1
-                    #列位置统计
+                    #列位置计数
                     cols[j][num] = cols[j].get(num, 0) + 1
-                    #9个3*3 box
+                    #9个3*3 box 计算box
                     boxs_index = (i//3)*3 + j //3
                     boxs[boxs_index][num] = boxs[boxs_index].get(num, 0) + 1
                     print(i, j, num, rows, cols, boxs)
                     if rows[i][num] > 1 or cols[j][num] > 1 or boxs[boxs_index][num] > 1:
                         return False
         return True
-
 if __name__ == '__main__':
     box = [
       ["5","3",".",".","7",".",".",".","."],
