@@ -23,7 +23,7 @@ class Solution:
         while digits and digits[-1] == 9:
             digits.pop()
             newlst.append(0)
-        if not digits:
+        if not digits: # [9]
             return [1] + newlst
         else:
             digits[-1] += 1

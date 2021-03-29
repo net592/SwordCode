@@ -67,13 +67,26 @@ class Solution:
         :param target: 9
         :return:
         """
-        left = 0
-        right = len(nums) -1
-        for i in range(len(nums)):
-            for j in range(i+1, right):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
+    def twoSum(self, nums, target):
+        """
+
+        :param nums: [2,7,11,15]
+        :param target: 9
+        :return:
+        """
+        # 建立查询哈希字典
+        hashmap={}
+        for i,v in enumerate(nums):
+            hashmap[v] = i
+        
+        # 递减 查看 结果集
+        for i,v in enumerate(nums):
+            j = hashmap.get(target - v)
+            if j is not None and i != j:
+                return [i,j]
         return []
+    
+    
 if __name__ == '__main__':
     s = Solution()
     nums = [2,7,11,15]

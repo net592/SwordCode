@@ -33,6 +33,28 @@ class Solution:
         reverse(0, k-1, nums)  # 反转k前一组 3 [5, 6, 7, 4, 3, 2, 1]
         reverse(k, n, nums)  # 反正k后剩余一组4  [5, 6, 7, 1, 2, 3, 4]
         return nums
+    
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        n = len(nums)
+        k %= n
+        nums[:] = nums[::-1] #必选先旋转
+        nums[:k] = nums[:k][::-1]
+        nums[k:] = nums[k:][::-1]
+        
+    def rotate(self, nums: List[int], k: int) -> None:
+        n = len(nums)
+        k %= n
+        for _ in range(k):
+            nums.insert(0, nums.pop())
+
+    def rotate(self, nums: List[int], k: int) -> None:
+        n=len(nums)
+        k%=n
+        nums[:]=nums[n-k:]+nums[:n-k]
+
 if __name__ == '__main__':
     s= Solution()
     print(s.rotate([1,2,3,4,5,6,7], 3))
