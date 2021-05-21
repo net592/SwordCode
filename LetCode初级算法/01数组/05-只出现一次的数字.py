@@ -34,7 +34,7 @@ class Solution:
         i = 0
         while(i<len(nums)-1):
             if nums[i] == nums[i+1]:
-                i+=2
+                i+=2 # 跳2步跳过该重复index位置
             else:
                 return nums[i]
             print(i)

@@ -7,6 +7,7 @@ def fib(n):
         return 1
     return fib(n-1) + fib(n-2)
 
+print(fib(0))
 # 迭代
 def fib(n):
     i, num1, num2 = 0, 1, 1
@@ -18,4 +19,12 @@ def fib(n):
     print(res)
     return res[n-1]
 
-print(fib(4))
+def fib(n):
+    a,b,c = 0,0,1
+    while a < n:
+        print(c) 
+        b, c = c, b+c
+        a += 1
+    return True
+
+print(fib(10))

@@ -29,12 +29,12 @@ def bubbleSort(arr):
 
 
 
-def bubbleSort(arr):
-    for i in range(1, len(arr)): # 循环冒泡次数
-        for j in range(0, len(arr)-i): # 一次冒泡排序，比较的数量范围 len(arr)-i是关键
-            if arr[j] > arr[j + 1]: # 大
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr
+# def bubbleSort(arr):
+#     for i in range(1, len(arr)): # 循环冒泡次数
+#         for j in range(0, len(arr)-i): # 一次冒泡排序，比较的数量范围 len(arr)-i是关键
+#             if arr[j] > arr[j + 1]: # 大
+#                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
+#     return arr
 
 
 if __name__ == '__main__':

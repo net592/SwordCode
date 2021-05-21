@@ -69,7 +69,7 @@ class Solution(object):
         map = {}
         for i in nums1:
             map[i] = map[i] + 1 if i in map else 1
-        # 对比nums2,将相同的数，增加到res中
+        # 对比nums2,将相同的数，增加到res中，并map计数减1s
         for j in nums2:
             if j in map and map[j] >0:  # 2个条件判断
                 res.append(j)

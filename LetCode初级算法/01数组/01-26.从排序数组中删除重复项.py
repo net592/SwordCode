@@ -47,6 +47,7 @@ class Solution:
                 print("dup", nums[i], slow)
         # 增加长度
         slow += 1
+        print("nums",nums[:slow], slow)
         return slow
 
 if __name__ == '__main__':

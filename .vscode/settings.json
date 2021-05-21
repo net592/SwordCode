@@ -1,7 +1,7 @@
 {
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": false,
-  "python.pythonPath": "C:\\Users\\xuzeming6\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "python.pythonPath": "C:\\Python39\\python.exe",
   "python.autoComplete.addBrackets": true,
   "python.linting.pylintEnabled": true
 }
