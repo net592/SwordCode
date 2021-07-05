@@ -2,7 +2,12 @@ class Solution:
     def rotate(self, matrix):
         """
         Do not return anything, modify matrix in-place instead.
-        :return [[7,4,1],[8,5,2],[9,6,3]]
+        [[1,2,3],
+        [4,5,6],
+        [7,8,9]]
+        :return [[7,4,1],
+                 [8,5,2],
+                 [9,6,3]]
         """
         # 解法思路，转换成 对角线交换，最后反转交换
         for i in range(len(matrix)):
